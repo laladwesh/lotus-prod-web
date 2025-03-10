@@ -1,7 +1,13 @@
 "use client";
 import React from "react";
 import { Archivo, Inter } from "next/font/google";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 // 1) Declare your fonts
@@ -23,40 +29,35 @@ function CategoryCard({ title, description }) {
     <div className="bg-gray border border-gray-200 rounded-md shadow-sm flex flex-col items-center text-center">
       {/* Placeholder for image */}
       <div className="w-full h-full bg-white mb-4 flex items-center justify-center rounded">
-        {/* <Carousel>
-          <img src="cat1.jpg" className="h-full" alt="" />
-          <img src="cat2.jpg" className="h-full" alt="" />
-          <img src="cat3.jpg" className="h-full" alt="" />
+        <Carousel
+          plugins={[
+            Autoplay({
+              delay: 2000,
+            }),
+          ]}
+        >
+          <CarouselContent>
+            <CarouselItem>
+              {" "}
+              <img src="cat1.png" className="h-full" alt="" />
+            </CarouselItem>
+            <CarouselItem>
+              {" "}
+              <img src="cat2.png" className="h-full" alt="" />
+            </CarouselItem>
+            <CarouselItem>
+              {" "}
+              <img src="cat3.png" className="h-full" alt="" />
+            </CarouselItem>
+          </CarouselContent>
         </Carousel>
-         */}
-         <Carousel
-         plugins={[
-          Autoplay({
-            delay: 2000,
-          }),
-        ]}>
-  <CarouselContent>
-    <CarouselItem> <img src="cat1.png" className="h-full" alt="" /></CarouselItem>
-    <CarouselItem> <img src="cat2.png" className="h-full" alt="" /></CarouselItem>
-    <CarouselItem> <img src="cat3.png" className="h-full" alt="" /></CarouselItem>
-  </CarouselContent>
-</Carousel>
-
       </div>
 
       {/* Card Title: Archivo */}
-      <h3
-        className="font-bold text-lg mb-2"
-        style={{ fontFamily: "var(--font-archivo)" }}
-      >
-        {title}
-      </h3>
+      <h3 className="font-bold text-lg mb-2 heading">{title}</h3>
 
       {/* Card Description: Inter */}
-      <p
-        className="text-sm text-gray-600 py-4"
-        style={{ fontFamily: "var(--font-inter)" }}
-      >
+      <p className="text-sm text-gray-600 py-4 px-2 description">
         {description}
       </p>
     </div>
@@ -69,7 +70,7 @@ export default function CategoriesSection() {
     {
       title: "Concrete Mixer",
       description:
-        "Efficiently blends and mixes cement, sand, and water to create uniform concrete.",
+        "Efficiently blends and mixes cement, sand, and water to create uniform concrete. CONNIE",
     },
     {
       title: "Brick Machines",
@@ -89,7 +90,7 @@ export default function CategoriesSection() {
     {
       title: "Concrete Mixer",
       description:
-        "Efficiently blends and mixes cement, sand, and water to create uniform concrete.",
+        "Efficiently blends and mixes cement, sand, and water to create uniform concrete. CONNIE",
     },
     {
       title: "Brick Machines",
@@ -109,27 +110,23 @@ export default function CategoriesSection() {
     {
       title: "Concrete Mixer",
       description:
-        "Efficiently blends and mixes cement, sand, and water to create uniform concrete.",
+        "Efficiently blends and mixes cement, sand, and water to create uniform concrete. CONNIE",
     },
   ];
 
   return (
     <section
       // 4) Attach both fonts as CSS variables on the wrapper
-      className={`py-12 bg-gray-50 ${archivo.variable} ${inter.variable}`}
+      className={`py-12 heading bg-gray-50 ${archivo.variable} ${inter.variable}`}
       // By default, let the section's text use Archivo
-      style={{ fontFamily: "var(--font-archivo)" }}
     >
       {/* Section Heading: Archivo */}
-      <h2
-        className="text-3xl font-bold text-center mb-8"
-        style={{ fontFamily: "var(--font-archivo)" }}
-      >
+      <h2 className="text-5xl font-bold text-center mb-8 heading">
         Our Categories
       </h2>
 
       {/* Cards Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="max-w-7xl px-8 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {categories.map((cat, idx) => (
           <CategoryCard
             key={idx}
