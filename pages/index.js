@@ -3,6 +3,9 @@ import { Archivo, Inter } from "next/font/google";
 import Card from "./_components/Card";
 import HomeCarousel from "./_components/HomeCarousel.js";
 import CategoriesSection from "./_components/Card";
+import DealDay from "./_components/DealDay";
+import OurStory from "./_components/OurStory";
+import OurFounderPage from "./_components/OurFounderPage";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -56,11 +59,6 @@ export default function Home() {
       description:
         "Used for hands-on learning, fostering experimentation, research, and scientific exploration",
     },
-    {
-      title: "Concrete Mixer",
-      description:
-        "Efficiently blends and mixes cement, sand, and water to create uniform concrete. CONNIE",
-    },
   ];
 
   const [seedData, setSeedData] = useState([]);
@@ -93,6 +91,9 @@ export default function Home() {
       <HomeCarousel/>
       <CategoriesSection title="Our Categories" categories={categories}/>
       <CategoriesSection title="New Products" categories={categories}/>
+      <DealDay/>
+      <OurStory/>
+      <OurFounderPage/>
     </div>
   );
 }

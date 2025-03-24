@@ -10,18 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-// 1) Declare your fonts
-const archivo = Archivo({
-  subsets: ["latin"],
-  weight: ["400", "700"], // adjust as needed
-  variable: "--font-archivo",
-});
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"], // adjust as needed
-  variable: "--font-inter",
-});
 
 // 2) Single card component
 function CategoryCard({ title, description }) {
@@ -70,7 +59,7 @@ export default function CategoriesSection({title , categories}) {
   return (
     <section
       // 4) Attach both fonts as CSS variables on the wrapper
-      className={`py-12 heading bg-gray-50 ${archivo.variable} ${inter.variable}`}
+      className={`py-12 heading bg-gray-50`}
       // By default, let the section's text use Archivo
     >
       {/* Section Heading: Archivo */}
