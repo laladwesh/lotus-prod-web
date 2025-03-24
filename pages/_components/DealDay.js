@@ -7,7 +7,7 @@ const DealDay = () => {
         Deal of the day
       </h1>
       <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5">
-        <div className="w-full md:w-1/2 bg-gray-800 p-8">
+        <div className="w-full md:w-1/2 h-96 bg-gray-800 p-8">
           <h1 className="text-white text-3xl md:text-5xl leading-tight font-bold mb-8 heading">
             Only Valid for Today
           </h1>
@@ -19,7 +19,7 @@ const DealDay = () => {
           </button>
         </div>
 
-        <div className="w-full md:w-1/2 bg-gray-800 p-8">
+        <div className="w-full md:w-1/2 h-96 bg-gray-800 p-8">
           <h1 className="text-white text-3xl md:text-5xl leading-tight font-bold mb-8 heading">
             Only Valid for Today
           </h1>
