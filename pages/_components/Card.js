@@ -65,55 +65,8 @@ function CategoryCard({ title, description }) {
 }
 
 // 3) Main categories section
-export default function CategoriesSection() {
-  const categories = [
-    {
-      title: "Concrete Mixer",
-      description:
-        "Efficiently blends and mixes cement, sand, and water to create uniform concrete. CONNIE",
-    },
-    {
-      title: "Brick Machines",
-      description:
-        "Combines manual and automated processes for enhanced efficiency and productivity",
-    },
-    {
-      title: "Trimix Systems",
-      description:
-        "Ensures precise material binding for perfect quality, consistency, and controlled preparation",
-    },
-    {
-      title: "Lab Equipments",
-      description:
-        "Used for hands-on learning, fostering experimentation, research, and scientific exploration",
-    },
-    {
-      title: "Concrete Mixer",
-      description:
-        "Efficiently blends and mixes cement, sand, and water to create uniform concrete. CONNIE",
-    },
-    {
-      title: "Brick Machines",
-      description:
-        "Combines manual and automated processes for enhanced efficiency and productivity",
-    },
-    {
-      title: "Trimix Systems",
-      description:
-        "Ensures precise material binding for perfect quality, consistency, and controlled preparation",
-    },
-    {
-      title: "Lab Equipments",
-      description:
-        "Used for hands-on learning, fostering experimentation, research, and scientific exploration",
-    },
-    {
-      title: "Concrete Mixer",
-      description:
-        "Efficiently blends and mixes cement, sand, and water to create uniform concrete. CONNIE",
-    },
-  ];
-
+export default function CategoriesSection({title , categories}) {
+  
   return (
     <section
       // 4) Attach both fonts as CSS variables on the wrapper
@@ -122,12 +75,12 @@ export default function CategoriesSection() {
     >
       {/* Section Heading: Archivo */}
       <h2 className="text-5xl font-bold text-center mb-8 heading">
-        Our Categories
+        {title}
       </h2>
 
       {/* Cards Grid */}
       <div className="max-w-7xl px-8 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {categories.map((cat, idx) => (
+        {categories?.map((cat, idx) => (
           <CategoryCard
             key={idx}
             title={cat.title}
