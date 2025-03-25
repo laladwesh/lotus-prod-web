@@ -10,7 +10,7 @@ import Autoplay from 'embla-carousel-autoplay';
 const HomeCarousel = () => {
   return (
     <div className="relative w-screen h-[80vh]">
-      <div className="absolute inset-0 z-10 flex flex-col items-start justify-center p-8 text-white md:p-16">
+      {/* <div className="absolute inset-0 z-10 flex flex-col items-start justify-center p-8 text-white md:p-16">
         <h1 className="mb-2 text-3xl font-bold md:text-5xl heading">Lotus Traders</h1>
         <p className="mb-4 text-lg md:text-xl description">
           Vision or Motto of Lotus in one line
@@ -21,18 +21,18 @@ const HomeCarousel = () => {
         >
           Place Enquiry
         </button>
-      </div>
+      </div> */}
       <Carousel plugins={[Autoplay({ delay: 2000 })]} className="w-full h-[80vh]">
         <CarouselContent>
           {/* Give each carousel item an explicit height */}
           <CarouselItem className="relative w-full h-[80vh]">
-            <Image src="/cat1.jpg" alt="Slide 1" fill className="object-cover" />
+            <Image src="/cat11.jpg" alt="Slide 1" fill className="object-fit" />
           </CarouselItem>
           <CarouselItem className="relative w-full h-[80vh]">
-            <Image src="/cat2.jpg" alt="Slide 2" fill className="object-cover" />
+            <Image src="/cat22.jpg" alt="Slide 2" fill className="object-fit" />
           </CarouselItem>
           <CarouselItem className="relative w-full h-[80vh]">
-            <Image src="/cat3.jpg" alt="Slide 3" fill className="object-cover" />
+            <Image src="/cat33.jpg" alt="Slide 3" fill className="object-fit" />
           </CarouselItem>
         </CarouselContent>
       </Carousel>
